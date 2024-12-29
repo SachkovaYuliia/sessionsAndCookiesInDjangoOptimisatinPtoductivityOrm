@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+{% include "base.html" %}
+<body class="bg-light">
+    <div class="container mt-5 text-center">
+        <div class="alert alert-success mx-auto" style="max-width: 500px;">
+            <h3>Ви успішно вийшли з системи!</h3>
+            <p>Дякуємо, що скористалися нашим сервісом.</p>
+            <a href="{% url 'login' %}" class="btn btn-primary">Увійти знову</a>
+        </div>
+    </div>
+</body>
+</html>
