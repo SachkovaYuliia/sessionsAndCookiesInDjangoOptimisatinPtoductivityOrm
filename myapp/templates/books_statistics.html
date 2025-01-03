@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Authors Statistics</h1>
+<table border="1">
+    <thead>
+        <tr>
+            <th>Author</th>
+            <th>Average Rating</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for author in authors %}
+        <tr>
+            <td>{{ author.name }}</td>
+            <td>{{ author.avg_rating|default:"No ratings yet" }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<h1>Books Statistics</h1>
+<table border="1">
+    <thead>
+        <tr>
+            <th>Book</th>
+            <th>Author</th>
+            <th>Review Count</th>
+            <th>Average Rating</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for book in books %}
+        <tr>
+            <td>{{ book.title }}</td>
+            <td>{{ book.author.name }}</td>
+            <td>{{ book.review_count }}</td>
+            <td>{{ book.avg_rating|default:"No ratings yet" }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>

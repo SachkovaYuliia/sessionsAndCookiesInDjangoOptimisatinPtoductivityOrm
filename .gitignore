@@ -25,6 +25,7 @@ staticfiles/
 # Virtual Environment
 venv/
 env/
+.env
 .venv/
 *.egg-info/
 

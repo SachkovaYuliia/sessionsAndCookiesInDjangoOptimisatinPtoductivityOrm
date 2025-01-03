@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+<h1>Authors with Books Having More Than 10 Reviews</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Author</th>
+                <th>Review Count</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for author in authors %}
+            <tr>
+                <td>{{ author.0 }}</td>
+                <td>{{ author.1 }}</td>
+                <td>{{ author.2 }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h2>Total Books: {{ total_books }}</h2>

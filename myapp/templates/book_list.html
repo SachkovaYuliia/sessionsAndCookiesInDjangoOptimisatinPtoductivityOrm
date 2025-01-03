@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}Book List{% endblock %}
+
+{% block content %}
+<h1 class="text-primary">Book List</h1>
+<!-- <table class="table table-striped">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Title</th>
+            <th>Author</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for book in books %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ book.title }}</td>
+            <td>{{ book.author.name }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %} -->
+<ul>
+    {% for book in books %}
+    <li>
+        <strong>{{ book.title }}</strong> by {{ book.author.name }}
+        <ul>
+            {% for review in book.reviews.all %}
+            <li>{{ review.content }}</li>
+            {% endfor %}
+        </ul>
+    </li>
+    {% endfor %}
+</ul>
